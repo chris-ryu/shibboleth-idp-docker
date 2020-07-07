@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Password for any auto-generated user-facing TLS credential
-UFPASS=userfacing-changethis
+UFPASS=password
 
 # Password for any auto-generated cookie encryption keystore
-SEALPASS=sealer-changethis
+SEALPASS=password
 
 # Scope for the IdP
-SCOPE=iay.org.uk
+SCOPE=bitgaram.info
 
 # Host name for the container
-HOST=idp2.$SCOPE
+HOST=idp.$SCOPE
 
 # Entity ID for the identity provider
 ENTITYID=https://$HOST/idp/shibboleth
@@ -19,7 +19,7 @@ ENTITYID=https://$HOST/idp/shibboleth
 
 DIST=/data/shibboleth-dist
 IDP_HOME=/opt/shibboleth-idp
-
+OVERLAY=/data/shibboleth-overlay
 #
 # Set up the property files for the Shibboleth install.
 # These files are deleted by the install process so
@@ -58,3 +58,5 @@ $DIST/bin/install.sh \
     -Didp.sealer.password=$SEALPASS \
     -Didp.keystore.password=$UFPASS \
     -Didp.noprompt=true
+
+cp -r /data/shibboleth-overlay/* $IDP_HOME

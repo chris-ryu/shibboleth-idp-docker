@@ -13,7 +13,7 @@
 ARG JAVA_VERSION
 FROM ${JAVA_VERSION}
 
-MAINTAINER Ian Young <ian@iay.org.uk>
+MAINTAINER Ryu, Gyoung-Seok <narzis@gmail.com>
 
 #
 # Jetty itself lives in JETTY_HOME.
@@ -39,13 +39,13 @@ ENV IDP_HOME=/opt/shibboleth-idp
 #
 ARG JETTY_BASE_VERSION
 ADD jetty-base-${JETTY_BASE_VERSION} ${JETTY_BASE}
-
+ARG SHIB_RELEASE
 #
 # Add the Jetty distribution.
 #
 ADD jetty-dist/dist          ${JETTY_HOME}
 
-EXPOSE 443 8443
+EXPOSE 80 443 8443
 
 VOLUME ["${IDP_HOME}"]
 
@@ -55,13 +55,15 @@ CMD ["java",\
     "-Didp.home=/opt/shibboleth-idp", \
     "-Djetty.base=/opt/jetty-base",\
     "-Djetty.logs=/opt/jetty-base/logs",\
+    # "-jar", "/opt/jetty/start.jar"]
     "-jar", "/opt/jetty/start.jar"]
+    # ,  "--list-modules"]
 
 #
 # Add Jetty configuration overlay from a tar archive.
 #
 ADD overlay/jetty-base-${JETTY_BASE_VERSION}.tar ${JETTY_BASE}
-
+ADD overlay/shibboleth.tar /data/shibboleth-overlay
 #
 # End.
 #
