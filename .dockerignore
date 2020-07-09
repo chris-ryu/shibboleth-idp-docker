@@ -17,6 +17,8 @@ saved-*/
 overlay/*
 !overlay/*.tar
 
+rest-env/
+
 #
 # End.
 #
