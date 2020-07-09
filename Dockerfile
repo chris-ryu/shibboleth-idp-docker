@@ -44,11 +44,11 @@ ARG SHIB_RELEASE
 # Add the Jetty distribution.
 #
 ADD jetty-dist/dist          ${JETTY_HOME}
-
 EXPOSE 80 443 8443
 
 VOLUME ["${IDP_HOME}"]
 
+RUN wget -P /opt/shibboleth-idp/webapp/WEB-INF/lib/ https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/19.6.0.0/ojdbc8-19.6.0.0.jar
 WORKDIR ${JETTY_BASE}
 CMD ["java",\
     "-Djdk.tls.ephemeralDHKeySize=2048", \
