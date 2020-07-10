@@ -38,6 +38,7 @@ echo idp.entityID=$ENTITYID>>$S
 echo idp.sealer.storePassword=$SEALPASS>>$S
 echo idp.sealer.keyPassword=$SEALPASS>>$S
 
+cp -r /data/shibboleth-overlay/* $IDP_HOME
 #
 # Perform the Shibboleth IdP install process.
 #
@@ -58,5 +59,3 @@ $DIST/bin/install.sh \
     -Didp.sealer.password=$SEALPASS \
     -Didp.keystore.password=$UFPASS \
     -Didp.noprompt=true
-
-cp -r /data/shibboleth-overlay/* $IDP_HOME
