@@ -15,5 +15,5 @@ docker run --rm --label=certbot-idp-renew \
   -p $IPADDR:80:80 \
   $CERTBOT_IMAGE certonly --noninteractive --quiet \
     --standalone --preferred-challenges http \
-    --domain idp2.iay.org.uk
+    --domain $FQDN
 
