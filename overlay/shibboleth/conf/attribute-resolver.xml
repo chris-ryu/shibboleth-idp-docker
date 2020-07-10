@@ -63,7 +63,7 @@
     
     <resolver:DataConnector id="Oracle" xsi:type="RelationalDatabase" 
         xmlns="urn:mace:shibboleth:2.0:resolver">
-        <SimpleManagedConnection jdbcDriver="oracle.jdbc.driver.OracleDriver" jdbcURL="jdbc:oracle:thin:@//13.209.18.89:32118/XEPDB1" jdbcUserName="dbuser" jdbcPassword="dbpassword" />
+        <SimpleManagedConnection jdbcDriver="oracle.jdbc.driver.OracleDriver" jdbcURL="jdbc:oracle:thin:@///XEPDB1" jdbcUserName="dbuser" jdbcPassword="dbpassword" />
         <QueryTemplate>
 
             <![CDATA[
