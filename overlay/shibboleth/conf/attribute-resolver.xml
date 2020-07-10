@@ -55,7 +55,7 @@
     </resolver:AttributeDefinition>
 
     <resolver:AttributeDefinition xsi:type="ad:Simple" id="title" sourceAttributeID="title">
-        <InputDataConnector ref="Oracle" attributeNames="title"/>
+        <resolver:Dependency ref="Oracle" />
         <resolver:AttributeEncoder xsi:type="enc:SAML1String" name="urn:mace:dir:attribute-def:title" encodeType="false" />
         <resolver:AttributeEncoder xsi:type="enc:SAML2String" name="urn:oid:2.5.4.12" friendlyName="title" encodeType="false" />
     </resolver:AttributeDefinition>
