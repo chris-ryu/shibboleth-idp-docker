@@ -38,9 +38,9 @@ echo idp.entityID=$ENTITYID>>$S
 echo idp.sealer.storePassword=$SEALPASS>>$S
 echo idp.sealer.keyPassword=$SEALPASS>>$S
 
-echo idp.loglevel.idp=DEBUG
-echo idp.loglevel.messages=DEBUG
-echo idp.loglevel.opensaml=DEBUG
+echo idp.loglevel.idp=DEBUG>>$S
+echo idp.loglevel.messages=DEBUG>>$S
+echo idp.loglevel.opensaml=DEBUG>>$S
 
 cp -r /data/shibboleth-overlay/* $IDP_HOME
 #
