@@ -58,9 +58,7 @@ CMD ["java",\
     "-Didp.home=/opt/shibboleth-idp", \
     "-Djetty.base=/opt/jetty-base",\
     "-Djetty.logs=/opt/jetty-base/logs",\
-    # "-jar", "/opt/jetty/start.jar"]
     "-jar", "/opt/jetty/start.jar"]
-    # ,  "--list-modules"]
 
 #
 # Add Jetty configuration overlay from a tar archive.
