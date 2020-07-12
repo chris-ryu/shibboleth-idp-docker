@@ -5,7 +5,7 @@
 #
 . VERSIONS
 
-cp -r ./overlay/shibboleth/edit-webapp/* ./shibboleth-idp/edit-webapp/
+# cp -r ./overlay/shibboleth/edit-webapp/* ./fetched/shibboleth-dist/edit-webapp/
 
 docker run --rm \
     -v `pwd`/shibboleth-idp:/opt/shibboleth-idp \
