@@ -17,9 +17,9 @@ mkdir -p overlay/jetty-base-${JETTY_BASE_VERSION}
 # actually symbolic links.
 #
 OVERLAY_DIR=`pwd`/overlay
-# pushd ${OVERLAY_DIR}/shibboleth
-#   tar --create --file ${OVERLAY_DIR}/shibboleth.tar .
-# popd
+pushd ${OVERLAY_DIR}/shibboleth
+  tar --create --file ${OVERLAY_DIR}/shibboleth.tar .
+popd
 pushd ${OVERLAY_DIR}/jetty-base-${JETTY_BASE_VERSION}
   tar --create --file ${OVERLAY_DIR}/jetty-base-${JETTY_BASE_VERSION}.tar .
 popd

@@ -39,7 +39,7 @@ ENV IDP_HOME=/opt/shibboleth-idp
 #
 ARG JETTY_BASE_VERSION
 ADD jetty-base-${JETTY_BASE_VERSION} ${JETTY_BASE}
-ARG SHIB_RELEASE
+# ARG SHIB_RELEASE
 #
 # Add the Jetty distribution.
 #
@@ -64,7 +64,7 @@ CMD ["java",\
 # Add Jetty configuration overlay from a tar archive.
 #
 ADD overlay/jetty-base-${JETTY_BASE_VERSION}.tar ${JETTY_BASE}
-# ADD overlay/shibboleth.tar /data/shibboleth-overlay
+ADD overlay/shibboleth.tar ${IDP_HOME}
 #
 # End.
 #

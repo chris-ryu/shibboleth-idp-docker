@@ -3,3 +3,4 @@
 
 # Password for the user-facing credential
 BROWSER_CERT_PASSWORD=password
+FQDN=idp.bitgaram.info

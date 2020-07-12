@@ -18,3 +18,4 @@ overlay/*.tar
 # End.
 #
 *.pem
+overlay/shibboleth/credentials/idp-userfacing.p12
