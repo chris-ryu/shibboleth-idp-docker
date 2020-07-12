@@ -41,7 +41,7 @@ echo idp.sealer.keyPassword=$SEALPASS>>$S
 #echo idp.loglevel.idp=DEBUG>>$S
 #echo idp.loglevel.messages=DEBUG>>$S
 #echo idp.loglevel.opensaml=DEBUG>>$S
-
+mkdir -p $IDP_HOME/edit-webapp/WEB-INF/
 cp -r /data/lib $IDP_HOME/edit-webapp/WEB-INF/
 #
 # Perform the Shibboleth IdP install process.
