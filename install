@@ -12,3 +12,5 @@ docker run --rm \
     -v `pwd`/overlay/shibboleth:/data/shibboleth-overlay \
     ${JAVA_VERSION} \
     /data/install-idp
+
+cp -r ./overlay/shibboleth/* ./shibboleth-idp/
