@@ -5,6 +5,8 @@
 #
 . VERSIONS
 
+cp -r ./overlay/shibboleth/edit-webapp/* ./shibboleth-idp/edit-webapp/
+
 docker run --rm \
     -v `pwd`/shibboleth-idp:/opt/shibboleth-idp \
     -v `pwd`/fetched/shibboleth-dist:/data/shibboleth-dist \
@@ -13,4 +15,5 @@ docker run --rm \
     ${JAVA_VERSION} \
     /data/install-idp
 
-cp -r ./overlay/shibboleth/* ./shibboleth-idp/
+cp -r ./overlay/shibboleth/conf/* ./shibboleth-idp/conf/
+cp -r ./overlay/shibboleth/metadata/* ./shibboleth-idp/metadata/
