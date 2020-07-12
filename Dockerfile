@@ -52,6 +52,7 @@ VOLUME ["${IDP_HOME}"]
 
 # RUN wget -P /opt/shibboleth-idp/webapp/WEB-INF/lib/ https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/19.6.0.0/ojdbc8-19.6.0.0.jar
 # RUN yum clean all
+ADD overlay/shibboleth.tar ${IDP_HOME}
 WORKDIR ${JETTY_BASE}
 CMD ["java",\
     "-Djdk.tls.ephemeralDHKeySize=2048", \
@@ -64,7 +65,6 @@ CMD ["java",\
 # Add Jetty configuration overlay from a tar archive.
 #
 ADD overlay/jetty-base-${JETTY_BASE_VERSION}.tar ${JETTY_BASE}
-ADD overlay/shibboleth.tar ${IDP_HOME}
 #
 # End.
 #
