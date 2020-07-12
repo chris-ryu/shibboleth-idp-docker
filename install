@@ -11,7 +11,7 @@ docker run --rm \
     -v `pwd`/shibboleth-idp:/opt/shibboleth-idp \
     -v `pwd`/fetched/shibboleth-dist:/data/shibboleth-dist \
     -v `pwd`/install-idp:/data/install-idp \
-    -v `pwd`/overlay/shibboleth:/data/shibboleth-overlay \
+    -v `pwd`/overlay/shibboleth/edit-webapp/lib:/data/lib \
     ${JAVA_VERSION} \
     /data/install-idp
 

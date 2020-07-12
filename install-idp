@@ -42,7 +42,7 @@ echo idp.sealer.keyPassword=$SEALPASS>>$S
 #echo idp.loglevel.messages=DEBUG>>$S
 #echo idp.loglevel.opensaml=DEBUG>>$S
 
-cp -r /data/shibboleth-overlay/edit-webapp $IDP_HOME/
+cp -r /data/lib $IDP_HOME/edit-webapp/
 #
 # Perform the Shibboleth IdP install process.
 #
