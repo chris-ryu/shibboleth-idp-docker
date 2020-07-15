@@ -11,6 +11,8 @@ services:
       - 8443:8443
     depends_on: 
       - rest
+    environment: 
+      - TZ=Asia/Seoul
 
   rest:
     image: chrisryu/idp-rest-oracle
@@ -18,4 +20,6 @@ services:
      - 4000:4000
     env_file: 
      - ./rest-env/db_server_oracle.env
+    environment: 
+      - TZ=Asia/Seoul
 
